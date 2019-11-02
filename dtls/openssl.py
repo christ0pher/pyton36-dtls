@@ -60,8 +60,8 @@ _logger = getLogger(__name__)
 #
 if sys.platform.startswith('win'):
     dll_path = path.abspath(path.dirname(__file__))
-    cryptodll_path = path.join(dll_path, "libeay32.dll")
-    ssldll_path = path.join(dll_path, "ssleay32.dll")
+    cryptodll_path = path.join(dll_path, "libcrypto.dll")
+    ssldll_path = path.join(dll_path, "libssl.dll")
     libcrypto = CDLL(cryptodll_path)
     libssl = CDLL(ssldll_path)
 else:
