@@ -123,7 +123,10 @@ if __name__ == "__main__":
           data_files=[('', [top_package_plat_files_file])] if plat_dist else []
     )
     if dist:
-        remove("README.rst")
+        try:
+            remove("README.rst")
+        except Exception:
+            pass
         for extra_file in top_package_extra_files:
             remove("dtls/" + extra_file)
         if plat_dist:
