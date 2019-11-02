@@ -72,8 +72,8 @@ if __name__ == "__main__":
             prebuilt_path = prebuilt_platform_root + "/" + platform
             config = {"MANIFEST_DIR": prebuilt_path}
             exec(open(prebuilt_path + "/manifest.pycfg").read(), config)
-            top_package_plat_files = map(lambda x: prebuilt_path + "/" + x,
-                                         config["FILES"])
+            top_package_plat_files = list(map(lambda x: prebuilt_path + "/" + x,
+                                         config["FILES"]))
             # Save top_package_plat_files with the distribution archive
             with open(top_package_plat_files_file, "wb") as fl:
                 dump(top_package_plat_files, fl)
