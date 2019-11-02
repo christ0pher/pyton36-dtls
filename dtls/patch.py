@@ -182,7 +182,8 @@ def _SSLSocket_init(self, sock=None, keyfile=None, certfile=None,
                                          do_handshake_on_connect,
                                          suppress_ragged_eofs, ciphers,
                                          cb_user_config_ssl_ctx=cb_user_config_ssl_ctx,
-                                         cb_user_config_ssl=cb_user_config_ssl)
+                                         cb_user_config_ssl=cb_user_config_ssl,
+                                         psk=psk, hint=hint)
     else:
         self._connected = True
         self._sslobj = sock
